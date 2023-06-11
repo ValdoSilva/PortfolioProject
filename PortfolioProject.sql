@@ -76,7 +76,7 @@ WHERE dea.continent is not NULL
 ORDER by 1,2
 
 
--- Looking at total population vs new vaccinations (continent and location)
+-- Looking at total population vs new vaccinations (continent and location) join two tables 
 
 SELECT dea.continent, dea.[location], dea.[date], dea.population, vacc.new_vaccinations,
 SUM(vacc.new_vaccinations) OVER (partition by dea.location order by dea.location, dea.date) as Rolling_people_vaccinated

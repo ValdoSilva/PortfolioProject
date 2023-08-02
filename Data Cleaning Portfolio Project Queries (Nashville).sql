@@ -19,6 +19,8 @@ PortfolioProject..NashvilleHousingDataforDataCleaning
 UPDATE PortfolioProject..NashvilleHousingDataforDataCleaning
 SET SaleDate = CONVERT(date, SaleDate)
 
+-- If it doesn't Update properly
+
 ALTER TABLE PortfolioProject..NashvilleHousingDataforDataCleaning
 ADD SaleDateConverted DATE;
 

@@ -16,7 +16,7 @@ ALTER COLUMN new_cases DECIMAL
 
 --total percentages death in each country (total death /total cases *100)
 --total death vs total cases 
-SELECT location,[date],total_cases, total_deaths, ROUND((total_deaths/total_cases)*100,2)as percentage_deaths
+SELECT location,[date],total_cases, total_deaths, CAST((total_deaths * 100.0 / total_cases) AS DECIMAL(10, 2)) AS percentage_deaths
 from 
 dbo.CovidDeaths
 WHERE [location] LIKE '%states%' --spesific location 
